@@ -8,7 +8,7 @@ Although these scripts can be modified to fit specific goals or workflows, as th
 
 1. Photographs should be organized as follows: "root" folder --> "camera" folder --> "date" folder --> "foray" folder.
   - "root" folder contains all the "camera" folders
-![Example of our root folder, called "Organized", which contains 4 folders for our 4 cameras used](root_folder.png)
+![Example of our root folder, called "Organized", which contains 4 folders for our 4 cameras used](images/root_folder.png)
   - "camera" folders each contain all the sub-folders collected by each individual camera (we used 4 cameras in our field season, so we have 4 "camera" folders)
 ![Example of a camera folder which contains folders named with observer and date](camera_folder.png)
   - "date" folders are one step below "camera" folders and contain all the "forays" completed on each day by each observer on that camera
