@@ -7,7 +7,7 @@ Contains code and documentation to process and validate data collected using the
 Although these scripts can be modified to fit specific goals or workflows, as they are written, they assume that data were collected according to the companion paper and that certain pre-processing steps were taken.
 
 1. Photographs should be organized as follows: "root" folder --> "camera" folder --> "date" folder --> "foray" folder.
-  - "root" folder contains all the "camera" folders
+  - "root" folder contains all the "camera" folders.  In this example, our "root" folder is "Organized".
 
 ![Example of our root folder, called "Organized", which contains 4 folders for our 4 cameras used](images/root_folder.png)
   - "camera" folders each contain all the sub-folders collected by each individual camera (we used 4 cameras in our field season, so we have 4 "camera" folders)
