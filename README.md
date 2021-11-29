@@ -10,11 +10,11 @@ Although these scripts can be modified to fit specific goals or workflows, as th
   - "root" folder contains all the "camera" folders
 ![Example of our root folder, called "Organized", which contains 4 folders for our 4 cameras used](images/root_folder.png)
   - "camera" folders each contain all the sub-folders collected by each individual camera (we used 4 cameras in our field season, so we have 4 "camera" folders)
-![Example of a camera folder which contains folders named with observer and date](camera_folder.png)
+![Example of a camera folder which contains folders named with observer and date](images/camera_folder.png)
   - "date" folders are one step below "camera" folders and contain all the "forays" completed on each day by each observer on that camera
-![Example of a date folder which contains folders named based on foray and an "extra" category for photos not included in the timelapse](date_folder.png)
+![Example of a date folder which contains folders named based on foray and an "extra" category for photos not included in the timelapse](images/date_folder.png)
   - "foray" folders contain all photographs collected in each trip from the boat (i.e., off a single timelapse).  Multiple transects can be included in one "foray", but they need to be grouped together to ensure the georeferencing works properly.  These should begin with a clear photograph of the watch face.  Photographs before this first clear image can be placed in a separate folder inside the "date" folder (we called ours "Extra").
-![Example of a foray folder with the first few photographs shown](foray_folder.png).
+![Example of a foray folder with the first few photographs shown](images/foray_folder.png).
 
 2. The time from the watch in the first photograph of each foray should be saved in a .csv (in our case, watchData.csv).  The "Folder" column should refer to the folder directly containing all the images for that foray, and the "Track" column should contain the entire GPS track name, including the .gpx at the end.
 ![Example of the header of watchData.csv](watchData_head.png)
