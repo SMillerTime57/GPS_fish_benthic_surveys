@@ -43,14 +43,17 @@ In this step, we take information regarding the time photographs were taken from
 For this step, use the "photo_extractor.R" script.  This script first generates a dataframe that contains a unique identifier for each survey transect segment (i.e., minute of fish counting).  
 
 ## Step 3. Copying sampled photographs to another folder for easy uploading
-In the previous step, photographs were associated 
+In the previous step, photographs were associated with fish transect segments based on the time each photograph was taken and the time that fish surveys were conducted via the creation of metadata csv files.  However, the photographs themselves have not been altered since they were renamed in Step 1.  This step uses a .bat file to locate the photographs and copy them (not move...the originals are preserved) to a different folder to enable easy uploading.
 
-This is currently only setup to run on a Windows machine -- users on Mac or Linux will have to find their own solution to copy the files.  Provided is the fileMover.bat file, which will 
+This is currently only setup to run on a Windows machine -- users on Mac or Linux will have to find their own solution to copy the files.  Provided is the "fileMover.bat" file, which takes a .txt file of the photographs (minus the file extension) and recursively searches through a folder to find matches in the filename of each row of the .txt file and copies these to another folder.  This needs three fields at the top to be modified (**NOTE: double-clicking will run the file.  To edit these paths, right-click and select "Edit"**):
+-set FIILELIST= should be the pathway to a .txt file containing just a list of photograph names without the (this the "extracted_images" file produced by the "photo_extractor.R" script) -- ex., set FIILELIST=D:\example_folder\extracted_images.txt
+-set FILESPATH= should be the pathway to your "root" folder that contains all the photographs nested within the subfolders.  The program will recursively search through all the subfolders to locate the files with the correct name -- ex., set FILESPATH=D:\Moorea\GoPros\Organized
+-set DESTPATH= should be the pathway to the folder you want to copy the photographs to -- ex., set FILESPATH=D:\images_to_upload
 
 ## Step 4a. Training of an automatic classifier on CoralNet
 **NOTE: If you already have a trained classifier, move to Step 4b.**
-Now that the photographs to be annotated are in a separate folder, they can easily be selected for annotation.  If you are starting completely fresh and do not have a trained automatic classifier on a CoralNet source, then you must train one.  To do this, you need to create a CoralNet source, upload images to the web platform of CoralNet (or provide it with annotations from another program), and perform manual annotations until you are satisfied with the progress or it stops retraining.  These steps will not be covered in detail here, but users are encouraged to check out the CoralNet about page and the references contained within (!(LINK)[https://coralnet.ucsd.edu/about/]).  When we trained our source initially, we uploaded 2 photographs per minute of fish surveys.  Below are some links to assist with this step.
 
--
+Now that the photographs to be annotated are in a separate folder, they can easily be selected for annotation.  If you are starting completely fresh and do not have a trained automatic classifier on a CoralNet source, then you must train one.  To do this, you need to create a CoralNet source, upload images to the web platform of CoralNet (or provide it with annotations from another program), and perform manual annotations until you are satisfied with the progress or it stops retraining.  These steps will not be covered in detail here, but users are encouraged to check out the CoralNet about page and the references contained within: https://coralnet.ucsd.edu/about/.  When we trained our source initially, we uploaded 2 photographs per minute of fish surveys (~8000 photographs), yet our classifier's performance plateaued after ~3450 photographs.
 
 ## Step 4b. 
+Once the classifier is 
