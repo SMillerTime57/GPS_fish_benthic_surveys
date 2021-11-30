@@ -5,7 +5,8 @@ source('gps_functions.R')
 library(tidyverse)
 
 #Fields to change
-imgLag <- 22 #The number of photographs ahead of the current time that should be sampled to better match the photographs with the actual locations of fish surveys
+img_lag <- 22 #The number of photographs ahead of the current time that should be sampled to better match the photographs with the actual locations of fish surveys
+photos_to_extract <- 64 #Number of photographs to sample from each minute of fish counting
 
 #Loads in image metadata with time and coordinates and converts to proper time format
 image_metadata <- read.csv("image_metadata.csv", header=TRUE, stringsAsFactors = FALSE)
@@ -53,7 +54,7 @@ colnames(sites_to_use) <- c('UniqueCode', 'Minute', 'allCode', 'Year', 'Month', 
 sites_to_use$UniqueCode <- as.character(sites_to_use$UniqueCode)
 
 #Selects image numbers within each minute to be used for analysis
-seq_list <- sample(1:90, 64, replace = FALSE)
+seq_list <- sample(1:90, photo_to_extract, replace = FALSE)
 
 #LIST OF ALL SITES REMAINING IN DATA
 all_sites <- unique(sites_to_use$UniqueCode)
@@ -63,14 +64,14 @@ sample_sites <- sites_to_use
 
 error_frame <- data.frame('Site' = character(), 'i' = integer(), 'n_images' = integer(), stringsAsFactors = FALSE)
 
-#Loops through the list of sites to 
+#Loops through the list of minute-long transect segments to associate the photographs with each transect segment
 for (i in 1:nrow(sample_sites)) {
   
   #Converts the fish transect times into posix format and shifts the time window forward based on imgLag to better-associate with fish surveys
   k <- which(fish_metadata$UniqueCode==sample_sites$UniqueCode[i])
   
   begTime <- timeMaker(sample_sites$Year[i], sample_sites$Month[i], sample_sites$Day[i], fish_metadata$Hour[k], fish_metadata$Minute[k], 0)
-  begTime <- begTime + (sample_sites$Minute[i] * 60) + imgLag
+  begTime <- begTime + (sample_sites$Minute[i] * 60) + img_lag
   finTime <- begTime + (60)
   
   #Extracts images associated with a fish transect of row i
