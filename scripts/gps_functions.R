@@ -1,3 +1,6 @@
+# Loads in dependencies
+library(plotKML)
+
 timeConvert <- function(year, month, day, startHour, startMin, endHour, endMin) {
   
   #This function takes information on the start time and end time of a transect and converts these values into the 
@@ -107,15 +110,12 @@ extractBenthicTrack <- function(file, code) {
   
 }
 
-generateMetadata <- function(files, year, month, day, hour, min, sec, code, track, trackPath = "D:\\Moorea\\Track Archive\\Moorea\\All", backwards = FALSE) {
+generateMetadata <- function(files, year, month, day, hour, min, sec, code, track, trackPath = "", backwards = FALSE, timeInt = (2/3)) {
   #This function generates image metadata (times and coordinates) for benthic images
-  #It assigns each image a time assuming a 2/3 second time lapse interval from the time in the function
+  #It assigns each image a time assuming a "timeInt" time lapse interval from the time in the function
   #It then uses this to associate each image with its closest GPS point from the track and assign these coordinates to the image
   #Returns a dataframe with the filename, time, and lat/lon coordinates
   #Written by Scott Miller
-  
-  setwd(trackPath)
-  
   
   initialTime <- timeMaker(year, month, day, hour, min, sec)
   runningTime <- initialTime
@@ -125,7 +125,7 @@ generateMetadata <- function(files, year, month, day, hour, min, sec, code, trac
   #These operate similarly except that the time starts at the end and time is subtracted, rather than starting at the beginning and being added
   if (backwards == TRUE) {
     
-    k <- 0:(length(files)-1) * - (2/3)
+    k <- 0:(length(files)-1) * - timeInt
     runningTime <- initialTime + k
     
     ##Associates each image with a time based on the start watch
@@ -134,7 +134,7 @@ generateMetadata <- function(files, year, month, day, hour, min, sec, code, trac
     
   } else {
     
-    k <- 0:(length(files)-1) * (2/3)
+    k <- 0:(length(files)-1) * timeInt
     runningTime <- initialTime + k
     
     ##Associates each image with a time based on the start watch
@@ -146,7 +146,7 @@ generateMetadata <- function(files, year, month, day, hour, min, sec, code, trac
   
   #Makes a length 2 list of the first and last time assigned to an image, which is fed into extractBenthicTrack
   times <- list(metadata[1,2], metadata[nrow(metadata),2])
-  routes <- extractBenthicTrack(track, code)
+  routes <- extractBenthicTrack(paste(trackPath, track, sep = ""), code)
   
   latitude <- c()
   longitude <- c()
@@ -186,7 +186,7 @@ batchRename <- function(gopro, parent, folder, rootPath = "G:\\Moorea\\GoPros\\O
 
 generateVertices <- function(beg, fin, width = 5) {
   #This function takes a matrix of beginning coordinates (representing the beginning center of a fish count minute) and
-  #a corresponding matrix of ending coordinates and generates vertices based on the width of the swath for a recangular polygon
+  #a corresponding matrix of ending coordinates and generates vertices based on the width of the swath for a rectangular polygon
   #beg is a 2 column matrix of coordinates (lon, lat) from the beginning of fish count minutes
   #fin is a 2 column matrix of coordinates (lon, lat) from the end of fish count minutes
   #width is the width of the swath in meters
