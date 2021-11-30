@@ -25,12 +25,17 @@ Although these scripts can be modified to fit specific goals or workflows, as th
 ![Example of the header of watchData.csv](watchData_head.png)
 
 3. All GPS tracks should be in a single folder.
+4. You should have a csv with metadata about each site
 
 ---
 
-## Step 1. Associating images with time and GPS coordinates
+## Step 1. Associating photographs with time and GPS coordinates
 These are the steps required to take these images, associate them with a time based on the time visible on the watch face at the beginning of each foray, then associate these times with coordinates from the GPS tracks.
 
-1. Photographs need to be renamed when large numbers are used.  Assuming a GoPro was used with the default naming scheme, there is bound to be some duplicate names of photographs across the dataset.  To do this, you can use the batchRename.R script to automatically assign each photograph a unique name.  It does so by adding the name in the "Folder" field to the front of the image name. **NOTE: This will permanently change the names of your images.  It is highly recommended that the photographs are backed up at some point prior to this step if they have not been already.**  
-2. Once photographs are named something unique, the next step is to actually generate the time and coordinate metadata for each photograph.  To do this, open the timeLapseTimer.R script and change the five fields at the top.  This may take some time to run, but the end result is a dataframe with each row representing an individual photograph, and the time and coordinates from the GPS tracks associated with them.
-3. 
+1. Photographs need to be renamed when large numbers are used.  Assuming a GoPro was used with the default naming scheme, there is bound to be some duplicate names of photographs across the dataset.  To do this, you can use the batchRenamer.R script to automatically assign each photograph a unique name.  It does so by adding the name in the "Folder" field of your "watchData.csv" to the front of the image name. **NOTE: This will permanently change the names of your images.  It is highly recommended that the photographs are backed up at some point prior to this step if they have not been already.**  
+2. Once photographs are named something unique, the next step is to actually generate the time and coordinate metadata for each photograph.  To do this, open the timeLapseTimer.R script and change the fields at the top (put in the filepath for your "watchData.csv" and change your root path to the entire path leading to your "root" folder from Step 0).  This may take some time to run, but the end product is a dataframe with each row representing an individual photograph, and the time and coordinates from the GPS tracks associated with them.
+
+---
+
+## Step 2. Pairing photographs with fish surveys
+In this step, we take the information on time photographs were taken from the newly-generated image_metadata.csv and use it to pair the photographs with their respective fish survey minute.
