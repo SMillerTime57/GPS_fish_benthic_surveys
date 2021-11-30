@@ -38,4 +38,19 @@ These are the steps required to take these images, associate them with a time ba
 ---
 
 ## Step 2. Pairing photographs with fish surveys
-In this step, we take the information on time photographs were taken from the newly-generated image_metadata.csv and use it to pair the photographs with their respective fish survey minute.
+In this step, we take information regarding the time photographs were taken from the newly-generated image_metadata.csv and use it to pair the photographs with their respective fish survey minute.  From there, 64 photographs are randomly selected (out of the possible 90) to be automatically-annotated by CoralNet.  The random selection can be ommitted if you desire to have all photographs associated with fish surveys.
+
+For this step, use the "photo_extractor.R" script.  This script first generates a dataframe that contains a unique identifier for each survey transect segment (i.e., minute of fish counting).  
+
+## Step 3. Copying sampled photographs to another folder for easy uploading
+In the previous step, photographs were associated 
+
+This is currently only setup to run on a Windows machine -- users on Mac or Linux will have to find their own solution to copy the files.  Provided is the fileMover.bat file, which will 
+
+## Step 4a. Training of an automatic classifier on CoralNet
+**NOTE: If you already have a trained classifier, move to Step 4b.**
+Now that the photographs to be annotated are in a separate folder, they can easily be selected for annotation.  If you are starting completely fresh and do not have a trained automatic classifier on a CoralNet source, then you must train one.  To do this, you need to create a CoralNet source, upload images to the web platform of CoralNet (or provide it with annotations from another program), and perform manual annotations until you are satisfied with the progress or it stops retraining.  These steps will not be covered in detail here, but users are encouraged to check out the CoralNet about page and the references contained within (!(LINK)[https://coralnet.ucsd.edu/about/]).  When we trained our source initially, we uploaded 2 photographs per minute of fish surveys.  Below are some links to assist with this step.
+
+-
+
+## Step 4b. 
