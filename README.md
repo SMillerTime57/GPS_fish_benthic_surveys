@@ -57,3 +57,10 @@ Now that the photographs to be annotated are in a separate folder, they can easi
 
 ## Step 4b. Automatic-annotation of benthic photographs
 Once the classifier is trained, you are now set to have your photographs automatically-annotated! To do this, you may either use the web version of CoralNet similar to how you did with manual annotation, only you would export the data without confirming any points by-hand (i.e., just take the first machine suggestion).  This will work for small datasets but is not recommended for larger number of images.  In these cases, it is highly-recommended to use the CoralNet API functionality.  More details and links to official documentation and code specific to CoralNet can be found in this blog post: https://coralnet.ucsd.edu/blog/automatically-annotating-175000-images-with-the-coralnet-api/
+
+---
+
+# Validation of the CoralNet automatic annotations
+This section will cover the steps needed to run our validation procedure to determine the ability of CoralNet's automatic annotations to estimate percent cover of key substrates at the scale of a transect segment.  It is recommended to run this and make sure you are comfortable with the results prior to beginning full-scale automatic annotation of your photographic dataset.  This requires some additional investment in terms of manual annotation, but does provide useful metrics that show how well the algorithm is performing at the scale of a transect segment for each substrate rather than how accurate it is at the level of a point.
+
+## Step 1. Select photographs to use
