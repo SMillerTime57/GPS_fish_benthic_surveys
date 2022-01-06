@@ -1,10 +1,10 @@
 generate_reference <- function(dat, num, cover = c('Coral', 'Algae', 'LowRel', 'HardSub', 'OtherSub', 'Obscured')) {
   
-  #Creates an empty frame that we use for saving the 'true' covers
-  true_cover <- setNames(data.frame(matrix(ncol = length(cover) + 1, nrow = 0)), c('SurveyCode', cover))
+  #Creates an empty frame that we use for saving the 'reference' covers
+  reference_cover <- setNames(data.frame(matrix(ncol = length(cover) + 1, nrow = 0)), c('SurveyCode', cover))
   
-  #Creates an empty frame that we save the image names used in the 'true' cover calculation
-  true_images <- data.frame('SurveyCode' = character(), 'ImageName' = character())
+  #Creates an empty frame that we save the image names used in the 'reference' cover calculation
+  reference_images <- data.frame('SurveyCode' = character(), 'ImageName' = character())
   
   for (survey in unique(dat$SurveyCode)) {
     
@@ -12,29 +12,29 @@ generate_reference <- function(dat, num, cover = c('Coral', 'Algae', 'LowRel', '
     temp <- sample_n(dat[dat$SurveyCode==survey,], num, replace = FALSE) %>%
       dplyr::select(Name, SurveyCode, cover)
     
-    #Calculates and saves the 'true' cover estimates from this sample
+    #Calculates and saves the 'reference' cover estimates from this sample
     temp_cover <- colMeans(temp[,cover])
-    true_cover[nrow(true_cover)+1, 'SurveyCode'] <- survey
-    true_cover[nrow(true_cover), cover] <- temp_cover
+    reference_cover[nrow(reference_cover)+1, 'SurveyCode'] <- survey
+    reference_cover[nrow(reference_cover), cover] <- temp_cover
     
-    #Saves the images dplyr::selected for the 'true' cover, so in future steps we remove these from the image pool
+    #Saves the images dplyr::selected for the 'reference' cover, so in future steps we remove these from the image pool
     temp_images <- data.frame('SurveyCode' = rep(survey, times = num), 'ImageName' = as.character(temp$Name))
-    true_images <- rbind(true_images, temp_images)
+    reference_images <- rbind(reference_images, temp_images)
     
   }
   
-  return(list(true_cover, true_images))
+  return(list(reference_cover, reference_images))
   
 }
 
 sample_human <- function(dat, files_to_exclude, sample_n, reps, cover = c('Coral', 'Algae', 'LowRel', 'HardSub', 'OtherSub', 'Obscured')) {
   
-  #Creates an empty frame that we use for saving the 'true' covers
+  #Creates an empty frame that we use for saving the 'reference' covers
   sample_cover <- setNames(data.frame(matrix(ncol = length(cover) + 3, nrow = 0)), c('SurveyCode', 'nImages', 'Replicate', cover))
   
   for (survey in unique(dat$SurveyCode)) {
     
-    #Isolates the images to filter out (because they were used to estimate 'true' cover)
+    #Isolates the images to filter out (because they were used to estimate 'reference' cover)
     filter_images <- files_to_exclude %>%
       filter(SurveyCode == survey)
     
@@ -70,7 +70,7 @@ sample_robot <- function(dat, sample_n, reps, cover = c('Coral', 'Algae', 'LowRe
   
   for (survey in unique(dat$SurveyCode)) {
     
-    #Extracts the set of unused images from the target survey
+    #Extracts the set of images from the target survey
     temp_images <- dat %>%
       filter(SurveyCode == survey)
     
@@ -94,10 +94,10 @@ sample_robot <- function(dat, sample_n, reps, cover = c('Coral', 'Algae', 'LowRe
   
 }
 
-generate_relationships <- function(true_dat, sample_dat, cover = c('Coral', 'Algae', 'LowRel', 'HardSub', 'Obscured')) {
+generate_relationships <- function(reference_dat, sample_dat, cover = c('Coral', 'Algae', 'LowRel', 'HardSub', 'Obscured')) {
   
   #Sorts the true dataset alphabetically
-  true_dat <- true_dat %>%
+  reference_dat <- reference_dat %>%
     arrange(SurveyCode)
   
   #Generates the master frame used to hold all the relevant information that is returned
@@ -113,10 +113,10 @@ generate_relationships <- function(true_dat, sample_dat, cover = c('Coral', 'Alg
     for (substrate in cover) {
       
       #Creates a temporary dataframe to hold our two comparison values together
-      temp_frame <- data.frame('SurveyCode' = true_dat$SurveyCode, 'TrueCover' = true_dat[,substrate], 'SampleCover' = filtered_dat[,substrate])
+      temp_frame <- data.frame('SurveyCode' = reference_dat$SurveyCode, 'ReferenceCover' = reference_dat[,substrate], 'SampleCover' = filtered_dat[,substrate])
       
       #Generates a linear model between the 'true' cover and the sample data
-      temp_model <- lm(TrueCover ~ SampleCover, dat = temp_frame)
+      temp_model <- lm(ReferenceCover ~ SampleCover, dat = temp_frame)
       
       master_relationship[nrow(master_relationship)+1, 'nImages'] <- sample_dat$nImages[1]
       master_relationship[nrow(master_relationship), 'Replicate'] <- i
