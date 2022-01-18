@@ -1,13 +1,13 @@
 rm(list=ls())
 
-source('F:\\Moorea\\Scripts\\gps_functions.R')
+source('gps_functions.R')
 library(tidyverse)
 
-image_metadata <- read.csv("F:\\Moorea\\Scripts\\Metadata Files\\image_metadata_12.10.18.csv", header=TRUE, stringsAsFactors = FALSE)
+image_metadata <- read.csv("image_metadata_12.10.18.csv", header=TRUE, stringsAsFactors = FALSE)
 image_metadata$Time <- strptime(image_metadata$Time, "%Y-%m-%d %H:%M:%S")
 image_metadata$observer <- substr(image_metadata$Filename, 1, 2)
 
-fish_metadata <- read.csv("F:\\Moorea\\Fish Counts\\Metadata\\fish_time_metadata.csv", header=TRUE)
+fish_metadata <- read.csv("fish_time_metadata.csv", header=TRUE)
 fish_metadata$observer <- substr(fish_metadata$UniqueCode, 1, 2)
 fish_metadata$UniqueCode <- as.character(fish_metadata$UniqueCode)
 
@@ -109,4 +109,4 @@ retainedImages$file <- sub('\\..*', '', retainedImages$Filename)
 retainedImages <- na.omit(retainedImages)
 
 write.csv(retainedImages, file = "image_metadata_coralnet.csv", row.names=FALSE) #writes the csv with all metadata of selected images
-write.csv(unique(retainedImages$file), file = "images_coralet.csv", row.names=FALSE) #writes the csv with just the unique image names
+write.csv(unique(retainedImages$file), file = "images_coralnet.csv", row.names=FALSE) #writes the csv with just the unique image names

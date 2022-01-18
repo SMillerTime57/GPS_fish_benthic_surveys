@@ -54,7 +54,7 @@ colnames(sites_to_use) <- c('UniqueCode', 'Minute', 'allCode', 'Year', 'Month', 
 sites_to_use$UniqueCode <- as.character(sites_to_use$UniqueCode)
 
 #Selects image numbers within each minute to be used for analysis
-seq_list <- sample(1:90, photo_to_extract, replace = FALSE)
+seq_list <- sample(1:90, photos_to_extract, replace = FALSE)
 
 #LIST OF ALL SITES REMAINING IN DATA
 all_sites <- unique(sites_to_use$UniqueCode)
