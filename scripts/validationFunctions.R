@@ -1,3 +1,5 @@
+library(tidyverse)
+
 generate_reference <- function(dat, num, cover = c('Coral', 'Algae', 'LowRel', 'HardSub', 'OtherSub', 'Obscured')) {
   
   #Creates an empty frame that we use for saving the 'reference' covers

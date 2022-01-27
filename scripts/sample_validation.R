@@ -5,11 +5,9 @@ rm(list=ls())
 #Loads in packages, source files, and data
 ######################
 ######################
-library(tidyverse)
-setwd('F:\\Moorea\\BertTesting')
-source('bert_test_functions.R')
-humanCover <- read.csv("validation_manual_cover.csv", stringsAsFactors = F)
-robotCover <- read.csv("validation_coralnet_cover.csv", stringsAsFactors = F)
+source('scripts\\validationFunctions.R')
+humanCover <- read.csv("data\\validation_manual_cover.csv", stringsAsFactors = F)
+robotCover <- read.csv("data\\validation_coralnet_cover.csv", stringsAsFactors = F)
 
 ######################
 ######################
@@ -25,7 +23,7 @@ master_human <- data.frame('nImages' = integer(), 'Replicate' = integer(), 'Subs
 nImages_human <- 1:8
 
 #Makes the vector of benthic covers we're interested in
-covers <- c('Coral', 'Algae', 'LowRel', 'HardSub', 'Obscured')
+covers <- c('Coral', 'Algae', 'SoftSub', 'HardSub', 'Obscured')
 
 #Begins a loop to create the numerous regressions.  
 #The outer loop (i in 1:100) determines how many random reference datasets will be made (this is different than "reps" which determines how many times the samples will be randomly drawn per reference set).  
@@ -41,7 +39,7 @@ for (i in 1:100) {
     sample_data <- sample_human(humanCover, reference_data[[2]], sample_n = j, reps = 1000, cover = covers)
     
     #Calculates regressions for each replicate of the sample data against the static reference dataset
-    relationship_data <- generate_relationships(true_data[[1]], sample_data, cover = covers)
+    relationship_data <- generate_relationships(reference_data[[1]], sample_data, cover = covers)
     
     #Combines the data from each run into the master datasheet
     master_human <- rbind(master_human, relationship_data)
@@ -63,7 +61,7 @@ master_robot <- data.frame('nImages' = integer(), 'Replicate' = integer(), 'Subs
                            'R_square' = numeric(), 'Slope' = numeric(), 'Intercept' = numeric())
 
 #Sets the different numbers of manually-annotated sample images per transect segment we want to explore
-nImages_robot <- c(1, 2, 4, 8, 16, 32, 64, 69)
+nImages_robot <- c(1, 2, 4, 8, 16, 32, 64)
 
 #Begins a loop to create the numerous regressions.  
 #The outer loop (i in 1:100) determines how many random reference datasets will be made (this is different than "reps" which determines how many times the samples will be randomly drawn per reference set).  
@@ -88,7 +86,7 @@ for (i in 1:100) {
 }
 
 #Writes the outputs to a csv so this time-consuming process doesn't need to be repeated
-write.csv(master_robot, 'master_robot_firstsplit_rep2_2.19.20.csv', row.names=FALSE)
+write.csv(master_robot, 'master_robot_output.csv', row.names=FALSE)
 
 ######################
 ######################
