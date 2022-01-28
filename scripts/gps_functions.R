@@ -85,7 +85,7 @@ timeMaker <- function(year, month, day, hour, min, sec) {
   
 }
   
-extractBenthicTrack <- function(file, code) {
+extractBenthicTrack <- function(file, code, timeZoneOffset = -10) {
   #Extracts GPS track associated with benthic data
   #This is similar to extractTrack, but this does not filter based on timeList - it returns the entire track
   #Written by Scott Miller
@@ -103,7 +103,7 @@ extractBenthicTrack <- function(file, code) {
   longitude <- location$lon
   time <- location$time
   time <- as.POSIXlt(time, format="%Y-%m-%dT%H:%M:%S")
-  time <- time - (10*60*60)
+  time <- time + (timeZoneOffset*60*60)
   
   route <- data.frame(index, latitude, longitude, time)
   

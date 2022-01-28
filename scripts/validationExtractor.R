@@ -1,9 +1,9 @@
 rm(list=ls())
 
-source('gps_functions.R')
+source('scripts\\gps_functions.R')
 library(tidyverse)
 
-image_metadata <- read.csv("image_metadata_12.10.18.csv", header=TRUE, stringsAsFactors = FALSE)
+image_metadata <- read.csv("image_metadata.csv", header=TRUE, stringsAsFactors = FALSE)
 image_metadata$Time <- strptime(image_metadata$Time, "%Y-%m-%d %H:%M:%S")
 image_metadata$observer <- substr(image_metadata$Filename, 1, 2)
 
