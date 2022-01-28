@@ -28,10 +28,11 @@ timeConvert <- function(year, month, day, startHour, startMin, endHour, endMin) 
   
 }
 
-extractTrack <- function(file, code, timeList) {
+extractTrack <- function(file, code, timeList, timeZoneOffset = -10) {
   #This function takes a GPX file and a list of length 2 that contains start and end times of a transect (generated from the timeConvert() function)
   #The code argument is a user-defined code (oftentimes the survey code) that they want to be associated with the GPS route
   #This then extracts the route information from the GPX file in between the times in timeList
+  #timeZoneOffset is a value that determines how far off (in hours) from GMT time the transect (NOTE: this is because our GPS saves in GMT, rather than local time)
   #NOTE: this only works if the GPX file has only one element in the tracks dataframe.
   #This means the track was cleared immediately prior to the survey and saved immediately after.  If the GPS was turned off between clearing and saving the track, the track is split into two dataframes and this needs to be manually adjusted.
   #Written by Scott Miller
@@ -55,7 +56,7 @@ extractTrack <- function(file, code, timeList) {
   longitude <- location$lon
   time <- location$time
   time <- as.POSIXlt(time, format="%Y-%m-%dT%H:%M:%S")
-  time <- time - (10*60*60) #Adjustment to change the time into Moorea time rather than the default time (10 hours * 60 minutes * 60 seconds)
+  time <- time + (timeZoneOffset*60*60) #Adjustment to change the time into Moorea time rather than the default time (10 hours * 60 minutes * 60 seconds)
   
   #Combines the data into a dataframe
   route <- data.frame(index, latitude, longitude, time)
