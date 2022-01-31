@@ -1,5 +1,6 @@
 # Loads in dependencies
 library(plotKML)
+library(geosphere)
 
 timeConvert <- function(year, month, day, startHour, startMin, endHour, endMin) {
   
