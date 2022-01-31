@@ -1,0 +1,76 @@
+taxonomy,family,genus,species,length_code,cite_bm_conversion,taxon_resolution,a,b,totlen2forklen,cite_length_conversion,note_length_conversion,Coarse_Trophic,Fine_Trophic,Herb_Type
+Acanthurus guttatus,Acanthuridae,Acanthurus,guttatus,FL,Kulbicki,Genus,0.028,2.983,0.98,Fishbase,,Primary Consumer,Herbivore/Detritivore,Grazer
+Acanthurus lineatus,Acanthuridae,Acanthurus,lineatus,FL,Kulbicki,Genus,0.028,2.983,0.812,Fishbase,,Primary Consumer,Herbivore/Detritivore,Grazer
+Acanthurus nigricans,Acanthuridae,Acanthurus,nigricans,FL,Kulbicki,Genus,0.028,2.983,0.984,Fishbase,,Primary Consumer,Herbivore/Detritivore,Grazer
+Acanthurus nigricauda,Acanthuridae,Acanthurus,nigricauda,FL,Kulbicki,Species,0.017,3.168,0.818,Fishbase,,Primary Consumer,Herbivore/Detritivore,Grazer
+Acanthurus nigrofuscus,Acanthuridae,Acanthurus,nigrofuscus,FL,Kulbicki,Species,0.026,3.028,0.883,Fishbase,,Primary Consumer,Herbivore/Detritivore,Grazer
+Acanthurus nigros,Acanthuridae,Acanthurus,nigros,FL,Kulbicki,Genus,0.028,2.983,0.912,Fishbase,,Primary Consumer,Herbivore/Detritivore,Grazer
+Acanthurus olivaceus,Acanthuridae,Acanthurus,olivaceus,FL,Kulbicki,Genus,0.028,2.983,0.893,Fishbase,,Primary Consumer,Herbivore/Detritivore,Grazer
+Acanthurus pyroferus,Acanthuridae,Acanthurus,pyroferus,FL,Kulbicki,Genus,0.028,2.983,0.929,Fishbase,,Primary Consumer,Herbivore/Detritivore,Grazer
+Acanthurus thompsoni,Acanthuridae,Acanthurus,thompsoni,FL,Kulbicki,Genus,0.028,2.983,0.88,Fishbase,,Planktivore,Planktivore_exclusively,na
+Acanthurus triostegus,Acanthuridae,Acanthurus,triostegus,FL,Kulbicki,Species,0.083,2.57,0.975,Fishbase,,Primary Consumer,Herbivore/Detritivore,Grazer
+Aetobatus narinari,Myliobatidae,Aetobatus,narinari,WD,CRED,Species,0.0059,3.13,1,CRED,,Secondary Consumer,Benthic Invertebrate Consumer,na
+Arothron hispidus,Tetraodontidae,Arothron,hispidus,FL,Kulbicki,Species,0.063,2.756,1,Fishbase,,Secondary Consumer,Omnivore,na
+Arothron meleagris,Tetraodontidae,Arothron,meleagris,FL,Kulbicki,Genus,0.035,2.901,1,Fishbase,,Secondary Consumer,Corallivore,na
+Balistoides viridescens,Balistidae,Balistoides,viridescens,FL,Kulbicki,Species,0.024,3.018,1,Fishbase,,Secondary Consumer,Benthic Invertebrate Consumer,na
+Calotomus carolinus,Scaridae,Calotomus,carolinus,NS,FishBase,Species,0.012,3.167,na,na,na,Primary Consumer,Herbivore/Detritivore,Browser
+Caranx melampygus,Carangidae,Caranx,melampygus,FL,Kulbicki,Species,0.023,2.918,0.937,Fishbase,,Piscivore_primarily,Piscivore,na
+Carcharhinus melanopterus,Carcharhinidae ,Carcharhinus,melanopterus,FL,Kulbicki,Genus,0.001,3.508,0.837,Fishbase,,Piscivore_primarily,Piscivore,na
+Cephalopholis argus,Serranidae,Cephalopholis,argus,FL,Kulbicki,Species,0.009,3.181,1,Fishbase,,Piscivore_primarily,Piscivore,na
+Cheilinus undulatus,Labridae,Cheilinus,undulatus,FL,Kulbicki,Species,0.011,3.136,1,Fishbase,,Secondary Consumer,Benthic Invertebrate Consumer,na
+Chlorurus frontalis,Scaridae,Chlorurus,frontalis,FL,Kulbicki,Congener,0.024,2.969,0.98,Fishbase,,Primary Consumer,Herbivore/Detritivore,Excavator
+Chlorurus microrhinos,Scaridae,Chlorurus,microrhinos,FL,Kulbicki,Congener,0.024,2.969,0.842,Fishbase,,Primary Consumer,Herbivore/Detritivore,Excavator
+Chlorurus sordidus,Scaridae,Chlorurus,sordidus,FL,Kulbicki,Species,0.024,2.969,1,Fishbase,,Primary Consumer,Herbivore/Detritivore,Excavator
+COTS,,,,,,,NA,NA,,,,NA,NA,na
+Ctenochaetus striatus,Acanthuridae,Ctenochaetus,striatus,FL,Kulbicki,Species,0.023,3.063,0.878,Fishbase,,Primary Consumer,Herbivore/Detritivore,Detritivore
+Ctenochaetus flavicauda,Acanthuridae,Ctenochaetus,flavicauda,FL,Kulbicki,Genus,0.024,3.056,0.939,Fishbase,,Primary Consumer,Herbivore/Detritivore,Detritivore
+Diodon hystrix,Diodontidae,Diodon,hystrix,FL,Kulbicki,Species,0.193,2.472,1,Fishbase,,Secondary Consumer,Benthic Invertebrate Consumer,na
+Epinephelus sp.,Serranidae,Epinephelus,,FL,Kulbicki,Genus,0.012,3.053,1,Fishbase,,Piscivore_primarily,Piscivore,na
+Hipposcarus longiceps,Scaridae,Hipposcarus,longiceps,FL,Kulbicki,Family,0.022,2.971,0.988,Fishbase,,Primary Consumer,Herbivore/Detritivore,Scraper
+Kuhlia mugil,Kuhliidae,Kuhlia,mugil,FL,CRED,Family,0.016,3.03364,0.93,CRED,,Planktivore,Planktivore_exclusively,na
+Kyphosus ocyurus,Kyphosidae,Kyphosus,ocyurus,FL,Kulbicki,Genus,0.013,3.151,0.934,Congener,,Primary Consumer,Herbivore/Detritivore,Browser
+Kyphosus sp.,Kyphosidae,Kyphosus,,FL,Kulbicki,Genus,0.013,3.151,0.934,Congener,,Primary Consumer,Herbivore/Detritivore,Browser
+Lactoria cornuta,Ostraciidae,Lactoria,cornuta,FL,Kulbicki,Species,0.006,3.168,1,Fishbase,,Secondary Consumer,Benthic Invertebrate Consumer,na
+Leptoscarus vaigiensis,Scaridae,Leptoscarus,vaigiensis,TL,Kulbicki,Species,0.017,2.965,na,Fishbase,na,Primary Consumer,Herbivore/Detritivore,Browser
+Lethrinus olivaceus,Lethrinidae,Lethrinus,olivaceus,FL,Kulbicki,Species,0.029,2.851,0.927,Fishbase,,Piscivore_primarily,Piscivore,na
+Lethrinus sp.,Lethrinidae,Lethrinus,,FL,Kulbicki,Genus,0.017,3.043,0.931,Genus Average,Avg of 2 congeners L. olivaceus and L. xanthochilus,Piscivore_primarily,Piscivore,na
+Lethrinus xanthochilus,Lethrinidae,Lethrinus,xanthochilus,FL,Kulbicki,Species,0.02,2.964,0.934,Fishbase,,Piscivore_primarily,Piscivore,na
+Lutjanus fulvus,Lutjanidae,Lutjanus,fulvus,FL,Kulbicki,Species,0.021,2.974,0.962,Fishbase,,Piscivore_primarily,Piscivore,na
+Lutjanus gibbus,Lutjanidae,Lutjanus,gibbus,FL,CRED,Species,0.01309,3.13752,0.89,CRED,,Piscivore_primarily,Piscivore,na
+Lutjanus monostigma,Lutjanidae,Lutjanus,monostigma,FL,CRED,Species,0.02218,2.91252,0.98,CRED,,Piscivore_primarily,Piscivore,na
+Monotaxis grandoculis,Lethrinidae,Monotaxis,grandoculis,FL,Kulbicki,Species,0.023,3.022,0.886,Photograph,,Secondary Consumer,Benthic Invertebrate Consumer,na
+Mulloidichthys flavolineatus,Mullidae,Mulloidicthys,flavolineatus,FL,Kulbicki,Species,0.012,3.101,0.915,Fishbase,,Secondary Consumer,Benthic Invertebrate Consumer,na
+Mulloidichthys vanicolensis,Mullidae,Mulloidicthys,vanicolensis,FL,Kulbicki,Congener,0.01,3.224,0.884,Fishbase,,Secondary Consumer,Benthic Invertebrate Consumer,na
+Naso lituratus,Acanthuridae,Naso,lituratus,FL,Kulbicki,Genus,0.009,3.25,0.838,Fishbase,,Primary Consumer,Herbivore/Detritivore,Browser
+Naso unicornis,Acanthuridae,Naso,unicornis,FL,Kulbicki,Species,0.018,3.035,0.904,Fishbase,,Primary Consumer,Herbivore/Detritivore,Browser
+NO COUNT,,,,,,,NA,NA,,,,NA,NA,na
+NO DATA,,,,,,,NA,NA,,,,NA,NA,na
+NO FISH,,,,,,,NA,NA,,,,NA,NA,na
+NOT COUNTED,,,,,,,NA,NA,,,,NA,NA,na
+Parupeneus barberinus,Mullidae,Parupeneus,barberinus,FL,Kulbicki,Species,0.013,3.122,0.884,Photograph,,Secondary Consumer,Benthic Invertebrate Consumer,na
+Parupeneus cyclostomus,Mullidae,Parupeneus,cyclostomus,FL,Kulbicki,Genus,0.015,3.13,0.897,Photograph,,Piscivore_primarily,Piscivore,na
+Parupeneus insularis,Mullidae,Parupeneus,insularis,FL,Kulbicki,Genus,0.015,3.13,0.897,Photograph,,Secondary Consumer,Benthic Invertebrate Consumer,na
+Parupeneus multifasciatus,Mullidae,Parupeneus,mutlifasciatus,FL,Kulbicki,Species,0.011,3.211,0.906,Photograph,,Secondary Consumer,Benthic Invertebrate Consumer,na
+Pseudobalistes flavimarginatus,Balistidae,Pseudobalistes,flavimarginatus,FL,Kulbicki,Congener,0.073,2.76,0.945,Fishbase,,Secondary Consumer,Benthic Invertebrate Consumer,na
+Scarus altipinnis,Scaridae,Scarus,altipinnis,FL,Kulbicki,Species,0.018,3.029,0.973,Fishbase,,Primary Consumer,Herbivore/Detritivore,Scraper
+Scarus forsteni,Scaridae,Scarus,forsteni,FL,Kulbicki,Genus,0.023,2.956,0.947,Fishbase,,Primary Consumer,Herbivore/Detritivore,Scraper
+Scarus frenatus,Scaridae,Scarus,frenatus,FL,Kulbicki,Genus,0.023,2.956,1,Photograph,Variable among size classes but close to 1,Primary Consumer,Herbivore/Detritivore,Scraper
+Scarus globiceps,Scaridae,Scarus,globiceps,FL,Kulbicki,Genus,0.023,2.956,1,Photograph,Variable among size classes but close to 1,Primary Consumer,Herbivore/Detritivore,Scraper
+Scarus niger,Scaridae,Scarus,niger,FL,Kulbicki,Species,0.013,3.16,1,Photograph,Variable among size classes but close to 1,Primary Consumer,Herbivore/Detritivore,Scraper
+Scarus oviceps,Scaridae,Scarus,oviceps,FL,Kulbicki,Genus,0.023,2.956,1,Photograph,Variable among size classes but close to 1,Primary Consumer,Herbivore/Detritivore,Scraper
+Scarus psittacus,Scaridae,Scarus,psittacus,FL,Kulbicki,Species,0.011,3.319,1,Photograph,Variable among size classes but close to 1,Primary Consumer,Herbivore/Detritivore,Scraper
+Scarus rubroviolaceus,Scaridae,Scarus,rubroviolaceus,FL,Kulbicki,Genus,0.023,2.956,0.91,Fishbase,,Primary Consumer,Herbivore/Detritivore,Scraper
+Scarus schlegeli,Scaridae,Scarus,schlegeli,FL,Kulbicki,Species,0.023,2.969,1,Photograph,Variable among size classes but close to 1,Primary Consumer,Herbivore/Detritivore,Scraper
+Siganus argenteus,Siganidae,Siganus,argenteus,FL,Kulbicki,Species,0.011,3.154,0.892,Fishbase,,Primary Consumer,Herbivore/Detritivore,Browser
+Siganus spinus,Siganidae,Siganus,spinus,FL,Kulbicki,Species,0.015,3.093,1,Photograph,,Primary Consumer,Herbivore/Detritivore,Browser
+Soldier,Holocentridae,Myripristis,,FL,CRED,Subfamily,0.02762,3.03041,0.89,Subfamily,Values for Myripristinae sp,Planktivore,Planktivore_exclusively,na
+Sphyraena barracuda,Sphyraenidae,Sphyraena,barracuda,FL,Kulbicki,Species,0.006,3.011,0.886,Fishbase,na,Piscivore_primarily,Piscivore,na
+Squirrel,Holocentridae,,,FL,CRED,Family,0.0222,3.05893,0.91,CRED,Values for Holocentridae,Secondary Consumer,Benthic Invertebrate Consumer,na
+Stingray,Dasyatidae,,,FL,CRED,Family,0.00937,3.35249,1,CRED,,NA,NA,na
+Triaenodon obesus,Carcharhinidae ,Triaenodon,obseus,TL,FishBase,Species,0.002,3.382,na,na,na,Piscivore_primarily,Piscivore,na
+Turtle,,,,,,,NA,NA,,,,NA,NA,na
+Tylosurus crocodilus,Belonidae,Tylosurus,crocodilus,FL,CRED,Species,0.00057,3.28481,0.97,CRED,,Piscivore_primarily,Piscivore,na
+Unknown Jack,Carangidae,,,FL,CRED,Family,0.00833,3.19724,0.89,CRED,Value for Carangidae sp,Piscivore_primarily,Piscivore,na
+Unknown Parrot,Scaridae,,,FL,CRED,Family,0.02337,2.95646,0.97,CRED,Value for Scaridae,Primary Consumer,Herbivore/Detritivore,Scraper
+Zebrasoma scopas,Acanthuridae,Zebrasoma,scopas,FL,Kulbicki,Species,0.029,2.993,1,Fishbase,,Primary Consumer,Herbivore/Detritivore,Grazer
+Zebrasoma veliferum,Acanthuridae,Zebrasoma,veliferum,FL,Kulbicki,Species,0.034,2.866,1,Fishbase,,Primary Consumer,Herbivore/Detritivore,Grazer
