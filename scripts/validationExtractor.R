@@ -37,8 +37,8 @@ colnames(validation_transects) <- c('UniqueCode', 'Minute', 'Year', 'Month', 'Da
 validation_transects$UniqueCode <- as.character(validation_transects$UniqueCode)
 
 #Original seq_list 
-#Use this when generating the human metadata -- pulls 20 images per minute (can be changed to whatever you want)
-human_seq_list <- c(1, 6, 11, 16, 21, 23, 26, 31, 36, 41, 46, 51, 56, 61, 66, 71, 76, 81, 86, 90)
+#Use this when generating the human metadata -- pulls 21 images per minute (can be changed to whatever you want)
+human_seq_list <- c(1, 6, 11, 16, 21, 23, 26, 31, 36, 41, 45, 46, 51, 56, 61, 66, 71, 76, 81, 86, 90)
 
 #The seq_list of all photos we have in the dataset
 #Use these two lines below when generating the robot metadata (change the seq_list to be the same as the human one above if you change it)

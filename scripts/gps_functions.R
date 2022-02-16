@@ -114,9 +114,14 @@ extractBenthicTrack <- function(file, code, timeZoneOffset = -10) {
 
 generateMetadata <- function(files, year, month, day, hour, min, sec, code, track, trackPath = "", backwards = FALSE, timeInt = (2/3)) {
   #This function generates image metadata (times and coordinates) for benthic images
-  #It assigns each image a time assuming a "timeInt" time lapse interval from the time in the function
+  #It assigns each image a time assuming a "timeInt" time lapse interval from the time in the function and a "year", "month", etc. start time
   #It then uses this to associate each image with its closest GPS point from the track and assign these coordinates to the image
   #Returns a dataframe with the filename, time, and lat/lon coordinates
+  #"code" is the value assigned to each photo
+  #"track" is the name of the GPX track
+  #trackPath is the pathway to where the track is saved
+  #In some cases, there were no clear views of the watchface in the beginning of the transect, but there was one from the end.  
+  #If backwards = FALSE, it assumes the watch was filmed in the beginning of the transect.  If backwards = TRUE, then it operates backwards from the end
   #Written by Scott Miller
   
   initialTime <- timeMaker(year, month, day, hour, min, sec)
