@@ -158,12 +158,10 @@ plot_octave <- function(humanDat, robotDat, substrates = c('Coral', 'Algae', 'Lo
     
     for (metric in metrics){
       
-      human_median <- tapply(plot_human[,metric], plot_human[,'nImages'], FUN = median)
       human_mean <- tapply(plot_human[,metric], plot_human[,'nImages'], FUN = mean)
       human05 <- tapply(plot_human[,metric], plot_human[,'nImages'], FUN = quantile, probs = 0.025, na.rm=TRUE)
       human95 <- tapply(plot_human[,metric], plot_human[,'nImages'], FUN = quantile, probs = 0.975, na.rm=TRUE)
       
-      robot_median <- tapply(plot_robot[,metric], plot_robot[,'plotX'], FUN = median)
       robot_mean <- tapply(plot_robot[,metric], plot_robot[,'plotX'], FUN = mean)
       robot05 <- tapply(plot_robot[,metric], plot_robot[,'plotX'], FUN = quantile, probs = 0.025, na.rm=TRUE)
       robot95 <- tapply(plot_robot[,metric], plot_robot[,'plotX'], FUN = quantile, probs = 0.975, na.rm=TRUE)
@@ -190,22 +188,20 @@ plot_octave <- function(humanDat, robotDat, substrates = c('Coral', 'Algae', 'Lo
              cex.lab = .5, col = 'azure2')
       
       #Plots human medians/means and bars
-      points(unique(plot_human$nImages-.1), human_median, cex = 1.5, col = 'red', pch=16)
-      points(unique(plot_human$nImages-.1), human_mean, cex = 1.5, col = 'red', pch = 4)
-      arrows(unique(plot_human$nImages-.1), human_median, 
-             unique(plot_human$nImages-.1), human05, angle = 90, col='red', length = 0.15, lwd = 2)
-      arrows(unique(plot_human$nImages-.1), human_median, 
-             unique(plot_human$nImages-.1), human95, angle = 90, col='red', length = 0.15, lwd = 2)
+      points(unique(plot_human$nImages-.1), human_mean, cex = 1.5, col = 'firebrick3', pch = 16)
+      arrows(unique(plot_human$nImages-.1), human_mean, 
+             unique(plot_human$nImages-.1), human05, angle = 90, col='firebrick3', length = 0.15, lwd = 2)
+      arrows(unique(plot_human$nImages-.1), human_mean, 
+             unique(plot_human$nImages-.1), human95, angle = 90, col='firebrick3', length = 0.15, lwd = 2)
       
       #Plots human medians/means and bars
-      points(unique(plot_robot$plotX+.1), robot_median, cex = 1.5, col = 'purple', pch=16)
-      points(unique(plot_robot$plotX+.1), robot_mean, cex = 1.5, col = 'purple', pch = 4)
-      arrows(unique(plot_robot$plotX+.1), robot_median, 
-             unique(plot_robot$plotX+.1), robot05, angle = 90, col='purple', length = 0.15, lwd = 2)
-      arrows(unique(plot_robot$plotX+.1), robot_median, 
-             unique(plot_robot$plotX+.1), robot95, angle = 90, col='purple', length = 0.15, lwd = 2)
+      points(unique(plot_robot$plotX+.1), robot_mean, cex = 1.5, col = '#0072B2', pch = 16)
+      arrows(unique(plot_robot$plotX+.1), robot_mean, 
+             unique(plot_robot$plotX+.1), robot05, angle = 90, col='#0072B2', length = 0.15, lwd = 2)
+      arrows(unique(plot_robot$plotX+.1), robot_mean, 
+             unique(plot_robot$plotX+.1), robot95, angle = 90, col='#0072B2', length = 0.15, lwd = 2)
       
-      legend('bottomright', c('Human', 'Robot'), fill = c('red', 'purple'))
+      legend('bottomright', c('Human', 'Computer Vision'), fill = c('firebrick3', '#0072B2'))
       
     }
   }

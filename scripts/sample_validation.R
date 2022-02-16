@@ -48,7 +48,7 @@ for (i in 1:100) {
 }
 
 #Writes the outputs to a csv so this time-consuming process doesn't need to be repeated
-write.csv(master_human, 'master_human_output.csv', row.names=FALSE)
+#write.csv(master_human, 'master_human_output.csv', row.names=FALSE)
 
 ######################
 ######################
@@ -86,7 +86,7 @@ for (i in 1:100) {
 }
 
 #Writes the outputs to a csv so this time-consuming process doesn't need to be repeated
-write.csv(master_robot, 'master_robot_output.csv', row.names=FALSE)
+#write.csv(master_robot, 'master_robot_output.csv', row.names=FALSE)
 
 ######################
 ######################
