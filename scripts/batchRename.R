@@ -1,10 +1,10 @@
 rm(list=ls())
 
 #Loads in the GPS functions used for this project
-source('gps_functions.R')
+source('scripts\\gps_functions.R')
 
 #Loads in our data on times
-watchDat <- read.csv("watchData.csv", header=TRUE) #Loads in your watchData file
+watchDat <- read.csv("data\\watchData.csv", header=TRUE) #Loads in your watchData file
 rootPath <- "" #Put the entire pathway to your "root" folder here - ex, "D/Cameras/Organized"
 
 #This loop calls the batchRename() function for each row of the watchDat csv file.  This goes to the folder in your computer

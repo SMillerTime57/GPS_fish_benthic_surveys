@@ -7,7 +7,7 @@ image_metadata <- read.csv("image_metadata.csv", header=TRUE, stringsAsFactors =
 image_metadata$Time <- strptime(image_metadata$Time, "%Y-%m-%d %H:%M:%S")
 image_metadata$observer <- substr(image_metadata$Filename, 1, 2)
 
-fish_metadata <- read.csv("fish_time_metadata.csv", header=TRUE)
+fish_metadata <- read.csv("data\\fish_time_metadata.csv", header=TRUE)
 fish_metadata$observer <- substr(fish_metadata$UniqueCode, 1, 2)
 fish_metadata$UniqueCode <- as.character(fish_metadata$UniqueCode)
 
@@ -40,8 +40,7 @@ validation_transects$UniqueCode <- as.character(validation_transects$UniqueCode)
 #Use this when generating the human metadata -- pulls 21 images per minute (can be changed to whatever you want)
 human_seq_list <- c(1, 6, 11, 16, 21, 23, 26, 31, 36, 41, 45, 46, 51, 56, 61, 66, 71, 76, 81, 86, 90)
 
-#The seq_list of all photos we have in the dataset
-#Use these two lines below when generating the robot metadata (change the seq_list to be the same as the human one above if you change it)
+#The seq_list of the images to be scored by coralnet
 coralnet_seq_list <- setdiff(1:90, human_seq_list) #samples the other images for the robot transects
 
 #This following block prepares the human images

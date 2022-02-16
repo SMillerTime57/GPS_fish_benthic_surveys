@@ -3,10 +3,10 @@ rm(list=ls())
 #Loads in necessary packages and our gps source script
 library(tidyverse)
 library(plotKML)
-source('gps_functions.R')
+source('scripts\\gps_functions.R')
 
 #Reads in the time data from the watch and sets the root path
-watchDat <- read.csv("watchData.csv", header=TRUE)
+watchDat <- read.csv("data\\watchData.csv", header=TRUE)
 rootPath <- "" #Change this to reflect the full path to your "root" folder of your images - ex., "D:/GoPros/Organized/"
 trackPath <- "" #Change this to reflect the full path to your folder containing all the GPS tracks
 timelapseInterval <- (2/3) #Change this to reflect the true timelapse interval.  We use 2/3 because that is what the 0.5 interval on our GoPros actually was based on testing
