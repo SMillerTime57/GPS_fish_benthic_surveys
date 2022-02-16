@@ -7,17 +7,17 @@ library(plotrix)
 ###################################
 #Loads in necessary data and makes minor transformations
 ###################################
-gps_count_data <- read.csv("fish_counts_gps_enabled.csv", header = T, stringsAsFactors = F)
+gps_count_data <- read.csv("data\\fish_counts_gps_enabled.csv", header = T, stringsAsFactors = F)
 gps_no_trio <- gps_count_data %>%
   filter(taxonomy != 'Acanthurus triostegus')
 
-site_metadata <- read.csv("fish_survey_metadata.csv", header = T, stringsAsFactors = F)
+site_metadata <- read.csv("data\\fish_survey_metadata.csv", header = T, stringsAsFactors = F)
 
-spp_met <- read.csv('species_metadata.csv', header=TRUE)
+spp_met <- read.csv('data\\species_metadata.csv', header=TRUE)
 spp_met <- spp_met %>%
   select(taxonomy, Herb_Type)
 
-lterDat <- read.csv('LTER_fish_counts.csv', header=TRUE, stringsAsFactors = FALSE)
+lterDat <- read.csv('data\\LTER_fish_counts.csv', header=TRUE, stringsAsFactors = FALSE)
 lterDat$UniqueCode <- paste(as.character(lterDat$Year), as.character(lterDat$Transect), sep="_")
 lterDat$Taxonomy[lterDat$Taxonomy=="Chlorurus spilurus"] <- "Chlorurus sordidus"
 lterDat$Taxonomy[lterDat$Taxonomy == 'Zebrasoma velifer'] <- 'Zebrasoma veliferum'
