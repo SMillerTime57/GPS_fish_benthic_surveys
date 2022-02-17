@@ -22,8 +22,6 @@ Although these scripts can be modified to fit specific goals or workflows, as th
 
 2. The time from the watch in the first photograph of each foray should be saved in a .csv (in our case, watchData.csv).  The "Folder" column should refer to the folder directly containing all the images for that foray, and the "Track" column should contain the entire GPS track name, including the .gpx at the end.
 
-![Example of the header of watchData.csv](watchData_head.png)
-
 3. All GPS tracks should be in a single folder.
 4. You should have a csv with metadata about each site
 
