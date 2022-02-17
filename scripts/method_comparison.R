@@ -401,6 +401,8 @@ for(i in 1:length(spp_list)) {
   
 }
 
+biomass_aov <- aov(Biomass ~ Species * DataType, data = all_summary)
+
 dev.new()
 par(oma = c(1, 2, 1, 1))
 plot(-1,-1, xlab = '', ylab = '', xlim = c(0,8), ylim = c(0,15),
@@ -456,6 +458,8 @@ for(i in 1:length(spp_list)) {
   cnh_bias$stdErr[i] <- std.error(cnh_plot$Density)
   
 }
+
+density_aov <- aov(Biomass ~ Species * DataType, data = all_summary)
 
 dev.new()
 par(oma = c(1, 2, 1, 1))
