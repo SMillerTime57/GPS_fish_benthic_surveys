@@ -41,4 +41,4 @@ for (i in 2:nrow(watchDat)) {
 }
 
 #Finally, writes the csv containing all of the data
-write.csv(saved_metadata, file = "image_metadata.csv")
+write.csv(saved_metadata, file = "image_metadata.csv", row.names = F)
