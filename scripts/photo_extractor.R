@@ -27,9 +27,9 @@ sites_to_use <- data.frame("UniqueCode" = character(), "Minute" = integer(), str
 
 for (site in as.character(sites$UniqueCode)){
   
-  tempFrame <- data.frame("UniqueCode" = character(length = sites$SurveyLength[sites$UniqueCode==site]), "Minute" = integer(length = sites$SurveyLength[sites$UniqueCode==site]), stringsAsFactors = FALSE)
+  tempFrame <- data.frame("UniqueCode" = character(length = site_metadata$SurveyLength[site_metadata$UniqueCode==site]), "Minute" = integer(length = site_metadata$SurveyLength[site_metadata$UniqueCode==site]), stringsAsFactors = FALSE)
   
-  for (i in 0:(sites$SurveyLength[sites$UniqueCode==site]-1)){
+  for (i in 0:(site_metadata$SurveyLength[site_metadata$UniqueCode==site]-1)){
     
     tempFrame$UniqueCode[i+1] <- as.character(site)
     tempFrame$Minute[i+1] <- i
