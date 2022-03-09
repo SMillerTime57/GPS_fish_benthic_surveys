@@ -35,7 +35,8 @@ for (i in 2:nrow(watchDat)) {
   files <- dir(path = pathway)
   
   saved_metadata <- rbind(saved_metadata, generateMetadata(files, watchDat$Year[i], watchDat$Month[i], watchDat$Day[i], watchDat$Hour[i], watchDat$Minute[i], watchDat$Second[i],
-                                                           as.character(watchDat$Folder[i]), as.character(watchDat$Track[i])))
+                                                           as.character(watchDat$Folder[i]), as.character(watchDat$Track[i]),
+                                                          trackPath = trackPath, timeInt = timelapseInterval))
   
 }
 
