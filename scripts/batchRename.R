@@ -5,7 +5,7 @@ source('scripts\\gps_functions.R')
 
 #Loads in our data on times
 watchDat <- read.csv("data\\watchData.csv", header=TRUE) #Loads in your watchData file
-rootPath <- "" #Put the entire pathway to your "root" folder here - ex, "D/Cameras/Organized"
+rootPath <- "" #Put the entire pathway to your "root" folder here - ex, "D/Cameras/Organized/" -- be sure to include the final slash at the end of the path
 
 #This loop calls the batchRename() function for each row of the watchDat csv file.  This goes to the folder in your computer
 #that matches the information in the row and renames every file within it to include the folder name in front of it
