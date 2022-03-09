@@ -25,7 +25,7 @@ site_metadata <- read.csv('site_metadata.csv', header=TRUE)
 #NOTE: depending on your needs or size of dataset, it may be useful to filter site_metadata here
 sites_to_use <- data.frame("UniqueCode" = character(), "Minute" = integer(), stringsAsFactors = FALSE)
 
-for (site in as.character(sites$UniqueCode)){
+for (site in as.character(site_metadata$UniqueCode)){
   
   tempFrame <- data.frame("UniqueCode" = character(length = site_metadata$SurveyLength[site_metadata$UniqueCode==site]), "Minute" = integer(length = site_metadata$SurveyLength[site_metadata$UniqueCode==site]), stringsAsFactors = FALSE)
   
